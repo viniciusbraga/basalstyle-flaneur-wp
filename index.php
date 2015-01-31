@@ -10,9 +10,9 @@
 get_header(); ?>
 
 
-<div id="content" class="content desktop-8 container">
+<div id="content" class="content desktop-12 container">
 
-    <div class="main row padding-top-1">
+    <div class="main row desktop-8 padding-top-1">
 
 
         <?php if ( ! have_posts() ) :
@@ -85,7 +85,7 @@ get_header(); ?>
     </div>
     <!-- .main -->
 
-    <?php // get_sidebar(); ?>
+    <?php get_sidebar(); ?>
 
 
 </div>
