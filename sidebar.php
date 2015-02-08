@@ -12,7 +12,7 @@
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
-    <div id="secondary" class="widget-area text-small row padding-top-1 desktop-3 col-left-1" role="complementary">
+    <div id="secondary" class="widget-area row padding-top-3 desktop-3 col-left-1" role="complementary">
         <?php dynamic_sidebar( 'sidebar-1' ); ?>
     </div>
     <!-- #secondary -->

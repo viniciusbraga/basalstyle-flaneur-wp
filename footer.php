@@ -14,7 +14,24 @@
     <!-- .content-frame -->
 
     <div class="footer-frame min-h-4 padding-top-1">
-        <footer id="colophon" class="footer desktop-8 container" role="contentinfo">
+        <footer id="colophon" class="footer desktop-12 container" role="contentinfo">
+
+
+            <section class="row">
+
+                <div class="widget-area  desktop-3 col-right-1">
+                    <?php dynamic_sidebar( 'footer-sidebar-1' ); ?>
+                </div>
+
+                <div class="widget-area  desktop-3  col-right-1">
+                    <?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
+                </div>
+
+                <div class="widget-area  desktop-3">
+                    <?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
+                </div>
+
+            </section>
 
             <div class="site-info">
                 <p class="copyright">&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?>. <?php _e( 'Powered by' ); ?> <a href="http://wordpress.org" title="WordPress.org">WordPress</a>.</p>

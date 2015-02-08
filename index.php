@@ -12,7 +12,7 @@ get_header(); ?>
 
 <div id="content" class="content desktop-12 container">
 
-    <div class="main row desktop-8 padding-top-1">
+    <div class="main row desktop-8 padding-top-3">
 
 
         <?php if ( ! have_posts() ) :
