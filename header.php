@@ -40,10 +40,10 @@
 
 <body <?php body_class();?> >
 
-    <div id="header-frame" class="header-frame  min-h-5 padding-top-1">
+    <div id="header-frame" class="header-frame  min-h-4">
 
-        <div class="row desktop-8 container">
-            <header class="header header-inline min-h-3 row desktop-8">
+        <div class="row desktop-12 container">
+            <header class="header header-inline min-h-2 row desktop-8">
 
                 <div class="site-logo"><?php
                     // Condicional que remove o link do logo do site quando na página de front-page
