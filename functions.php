@@ -137,6 +137,21 @@ add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
 
 
 /**
+/**
+ * Substitui parágrafos que envolvem <img> pela tag <figure>
+ * Não aplica em qualquer imagem, apenas em uma imagem contida em um parágrafo (P > IMG).
+ * @author Vinicius Braga
+ * @link
+ */
+function apply_figure_tag( $content ) {
+    $content = preg_replace( '#<p>\s*+(<img.*>)?\s*</p>#i', '<figure>$1</figure>', $content );
+    return $content;
+}
+
+add_filter('the_content', 'apply_figure_tag', 200);
+
+
+/**
  * Lista as funções carregadas no wp_header()
  *
  */
