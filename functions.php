@@ -120,8 +120,8 @@ add_action( 'widgets_init', 'basalstyle_widgets_init' );
 
 
 /**
-* Retira o salto no link do "Ler Mais" da listagem.
-*/
+ * Retira o salto no link do "Ler Mais" da listagem.
+ */
 function basalstyle_remove_more_jump_link( $link ) {
     $offset = strpos( $link, '#more-' );
     if ($offset) {
