@@ -642,18 +642,6 @@ a { text-decoration: none; }
  *
  */
 
-/**
- * Crayon Syntax Highlighter
- */
 
-.crayon-table td {
-    font-size: 1.2em;
-    line-height: 21px;
-}
-
-.crayon-num,
-.crayon-line {
-    min-height: 20px;
-}
 
 /* Fim */
