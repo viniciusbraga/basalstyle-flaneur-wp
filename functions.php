@@ -137,6 +137,19 @@ add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
 
 
 /**
+ * Remove parágrafos vazios criados pelo WP no conteúdo.
+ * @author Ryan Hamilton
+ * @link https://gist.github.com/Fantikerz/5557617
+ */
+function remove_empty_p( $content ) {
+    $content = force_balance_tags( $content );
+    $content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+    $content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
+    return $content;
+}
+
+add_filter('the_content', 'remove_empty_p', 200);
+
 /**
  * Substitui parágrafos que envolvem <img> pela tag <figure>
  * Não aplica em qualquer imagem, apenas em uma imagem contida em um parágrafo (P > IMG).
