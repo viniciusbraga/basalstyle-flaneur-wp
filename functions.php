@@ -120,8 +120,8 @@ add_action( 'widgets_init', 'basalstyle_widgets_init' );
 
 
 /**
-* Retira o salto no link do "Ler Mais" da listagem.
-*/
+ * Retira o salto no link do "Ler Mais" da listagem.
+ */
 function basalstyle_remove_more_jump_link( $link ) {
     $offset = strpos( $link, '#more-' );
     if ($offset) {
@@ -134,6 +134,34 @@ function basalstyle_remove_more_jump_link( $link ) {
 }
 
 add_filter('the_content_more_link', 'basalstyle_remove_more_jump_link');
+
+
+/**
+ * Remove parágrafos vazios criados pelo WP no conteúdo.
+ * @author Ryan Hamilton
+ * @link https://gist.github.com/Fantikerz/5557617
+ */
+function remove_empty_p( $content ) {
+    $content = force_balance_tags( $content );
+    $content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+    $content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
+    return $content;
+}
+
+add_filter('the_content', 'remove_empty_p', 200);
+
+/**
+ * Substitui parágrafos que envolvem <img> pela tag <figure>
+ * Não aplica em qualquer imagem, apenas em uma imagem contida em um parágrafo (P > IMG).
+ * @author Vinicius Braga
+ * @link
+ */
+function apply_figure_tag( $content ) {
+    $content = preg_replace( '#<p>\s*+(<img.*>)?\s*</p>#i', '<figure>$1</figure>', $content );
+    return $content;
+}
+
+add_filter('the_content', 'apply_figure_tag', 200);
 
 
 /**

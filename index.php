@@ -78,7 +78,7 @@ get_header(); ?>
 
         <?php endif; // Fim da paginação ?>
 
-        <div class="row padding-bottom-1">
+        <div id="frame-comment" class="row padding-bottom-1">
             <?php comments_template( '', true ); ?>
         </div>
 
