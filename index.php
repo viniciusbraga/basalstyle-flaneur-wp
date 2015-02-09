@@ -9,18 +9,10 @@
 
 get_header(); ?>
 
-<div class="row min-h-4">
-    <div class="desktop-12 container">
-        <div class="content desktop-8 col-left-2">
-            <?php get_search_form(); ?>
-        </div>
-    </div>
-</div>
 
+<div id="content" class="content desktop-12 container">
 
-<div id="content" class="content desktop-8 container">
-
-    <div class="main row padding-top-1">
+    <div class="main row desktop-8 padding-top-3">
 
 
         <?php if ( ! have_posts() ) :
@@ -86,14 +78,14 @@ get_header(); ?>
 
         <?php endif; // Fim da paginação ?>
 
-        <div class="row padding-bottom-1">
+        <div id="frame-comment" class="row padding-bottom-1">
             <?php comments_template( '', true ); ?>
         </div>
 
     </div>
     <!-- .main -->
 
-    <?php // get_sidebar(); ?>
+    <?php get_sidebar(); ?>
 
 
 </div>
