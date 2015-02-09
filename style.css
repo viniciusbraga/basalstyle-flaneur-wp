@@ -416,7 +416,6 @@ a { text-decoration: none; }
     .widget-area {
         width: 96%;
         margin: 0  auto;
-        background: rgba(255,0,0,0.25);
     }
 
 }
