@@ -157,7 +157,8 @@ add_filter('the_content', 'remove_empty_p', 200);
  * @link
  */
 function apply_figure_tag( $content ) {
-    $content = preg_replace( '#<p>\s*+(<img.*>)?\s*</p>#i', '<figure>$1</figure>', $content );
+    $content = preg_replace( '#<p>\s*+(<img.*>)?\s*</p>#i', '<figure class="img">$1</figure>', $content );
+    $content = preg_replace( '#<p>\s*+(<a.*>\s*+<img.*>?\s*</a>)?\s*</p>#i', '<figure class="img">$1</figure>', $content );
     return $content;
 }
 

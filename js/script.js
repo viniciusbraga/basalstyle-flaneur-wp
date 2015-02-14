@@ -28,10 +28,12 @@ $(document).ready(function(){
      * @link
      */
 
-    $.fn.fixHeight = function(){
+    $.fn.fixHeight = function(leading){
+
+        var leading = (leading) ? leading : parseInt($('.main p').css('line-height'), 10);
 
         $.each( $(this), function() {
-            var new_box_height = 30 * Math.ceil( $(this).outerHeight() / 30 ) ;
+            var new_box_height = leading * Math.ceil( $(this).outerHeight() / leading ) ;
             $(this).css("min-height", new_box_height );
             // console.log( 'new_box_height: ' + new_box_height );
         });
